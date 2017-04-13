@@ -1,0 +1,11 @@
+version: '3'
+services: 
+  janus:
+    image: mcroth/docker-janus
+    volumes:
+      - ./janus/etc/janus/:/opt/janus/etc/janus/
+  jangouts:
+    build: ./
+    ports: 
+      - "80:80"
+      - "443:443"

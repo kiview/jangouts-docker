@@ -1,0 +1,9 @@
+{
+  "janusServer": "wss://10.63.7.249/janus/",
+  "janusServerSSL": null,
+  "janusDebug": false,
+  "httpsAvailable": true,
+  "httpsUrl": null,
+  "videoThumbnails": true,
+  "joinUnmutedLimit": 3
+}
