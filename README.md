@@ -18,7 +18,8 @@ You can configure Jangouts using the following environment variables:
 
 | Variable | Description | Default | 
 | --- | --- | --- |
-| JANUS_SERVER_SSL | i.e. `wss://janus.server/janus/` | *mandatory*
+| JANUS_SERVER | i.e. `wss://janus.server/janus/` | *mandatory*
+| JANUS_SERVER_SSL |  | null
 | JANUS_DEBUG | | false |
 | HTTPS_AVAILABLE | | true |
 | HTTPS_URL | Jangouts will try to infere this if not set. | null |

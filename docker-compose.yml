@@ -2,10 +2,30 @@ version: '3'
 services: 
   janus:
     image: mcroth/docker-janus
+    container_name: janus
     volumes:
       - ./janus/etc/janus/:/opt/janus/etc/janus/
+    labels:
+      traefik.enable: "true"
+    expose:
+      - "8188"
+
   jangouts:
-    build: ./
+    image: kiview/jangouts
+    container_name: jangouts
+    environment:
+      - JANUS_SERVER=wss://janus.chat/janus/
+    labels:
+      traefik.enable: "true"
+
+  traefik:
+    image: traefik:1.2.3
     ports: 
       - "80:80"
+      - "8080:8080"
       - "443:443"
+    volumes:
+      - ./server.crt:/certs/server.crt
+      - ./server.key:/certs/server.key
+      - ./traefik.toml:/etc/traefik/traefik.toml
+      - /var/run/docker.sock:/var/run/docker.sock
