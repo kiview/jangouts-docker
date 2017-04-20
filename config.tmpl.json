@@ -1,0 +1,9 @@
+{
+  "janusServer": "{{ .Env.JANUS_SERVER }}",
+  "janusServerSSL": {{ default .Env.JANUS_SERVER_SSL "null" }},
+  "janusDebug": {{ default .Env.JANUS_DEBUG "false" }},
+  "httpsAvailable": {{ default .Env.HTTPS_AVAILABLE "true" }},
+  "httpsUrl": {{ default .Env.HTTPS_URL "null" }},
+  "videoThumbnails": {{ default .Env.VIDEO_THUMBNAILS "true" }},
+  "joinUnmutedLimit": {{ default .Env.JOIN_UNMUTED_LIMIT "3" }}
+}
